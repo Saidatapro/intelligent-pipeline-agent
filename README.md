@@ -272,8 +272,6 @@ File: `.github/workflows/ci.yml`
 ## 👥 Contributors & Contact
 
 **Author:** [Sai Teja Boyapati](mailto:boyapatisaiteja565@gmail.com)  
-**LinkedIn:** [linkedin.com/in/saitejaboyapati](https://linkedin.com/in/saitejaboyapati)  
-**License:** MIT (see `LICENSE`)
 
 ---
 
