@@ -54,10 +54,13 @@ def build_graph():
     g.set_entry_point("monitor")
     g.add_conditional_edges("monitor", after_monitor, {"analyze":"analyze","communicate":"communicate"})
     g.add_edge("analyze","optimize")
-    g.add_conditional_edges("optimize", after_optimize, {"communicate":"communicate"})
+    g.add_conditional_edges("optimize", after_optimize, {"communicate":"communicate", END: END})
     return g.compile(checkpointer=MemorySaver())
 
 workflow = build_graph()
 
 def run_once(pipeline_id: int, approved: bool=False) -> AgentState:
-    return workflow.invoke({"pipeline_id": pipeline_id, "approved": approved})
+    return workflow.invoke(
+        {"pipeline_id": pipeline_id, "approved": approved},
+        config={"configurable": {"thread_id": str(pipeline_id)}}
+    )

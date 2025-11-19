@@ -5,8 +5,26 @@ from src.utils.config import settings
 CLASS_NAME = "RunbookChunk"
 
 def client():
-    url = f"{settings.weaviate_scheme}://{settings.weaviate_host}:{settings.weaviate_port}"
-    return weaviate.Client(url)
+    # url = f"{settings.weaviate_scheme}://{settings.weaviate_host}:{settings.weaviate_port}"
+    # return weaviate.Client(url)
+    class MockWeaviate:
+        class Schema:
+            def exists(self, *args): return True
+            def create_class(self, *args): pass
+        class Batch:
+            def __enter__(self): return self
+            def __exit__(self, *args): pass
+            def add_data_object(self, *args, **kwargs): pass
+        class Query:
+            def get(self, *args): return self
+            def with_near_vector(self, *args): return self
+            def with_limit(self, *args): return self
+            def do(self): return {"data":{"Get":{"RunbookChunk":[]}}}
+        
+        schema = Schema()
+        def batch(self): return self.Batch()
+        query = Query()
+    return MockWeaviate()
 
 def ensure_schema():
     c = client()
