@@ -1,14 +1,14 @@
 # 🧠 Intelligent Data Pipeline Monitor & Optimizer (Agentic AI System)
 
-### Production-Ready Multi-Agent System for Autonomous Data Pipeline Monitoring, Diagnosis, and Optimization
+### Production Ready Multi Agent System for Autonomous Data Pipeline Monitoring, Diagnosis, and Optimization
 
 ---
 
 ## 🚀 Overview
 
-**Intelligent Data Pipeline Agent (IPA)** is a **self-healing, AI-driven platform** that autonomously monitors data pipelines, detects anomalies, performs root-cause analysis using a RAG system, and applies optimization strategies — all orchestrated by a **LangGraph multi-agent architecture**.
+**Intelligent Data Pipeline Agent (IPA)** is a **self-healing, AI-driven platform** that autonomously monitors data pipelines, detects anomalies, performs root-cause analysis using a RAG system, and applies optimization strategies all orchestrated by a **LangGraph multi agent architecture**.
 
-IPA bridges the worlds of **Data Engineering**, **MLOps**, and **Agentic AI**, providing real-time observability, automated RCA, and optimization for complex ETL, streaming, or batch workloads across modern data stacks.
+IPA bridges the worlds of **Data Engineering**, **MLOps**, and **Agentic AI**, providing real time observability, automated RCA, and optimization for complex ETL, streaming, or batch workloads across modern data stacks.
 
 ---
 
@@ -16,14 +16,14 @@ IPA bridges the worlds of **Data Engineering**, **MLOps**, and **Agentic AI**, p
 
 ```
                         ┌────────────────────────────────────────────┐
-                        │          Streamlit Dashboard (UI)           │
-                        │   Human-in-the-loop + Visualization Layer   │
+                        │          Streamlit Dashboard (UI)          │
+                        │   Human-in-the-loop + Visualization Layer  │
                         └────────────────────────────────────────────┘
                                         │
                                         ▼
                     ┌────────────────────────────┐
-                    │         FastAPI API         │
-                    │ REST + WebSocket endpoints  │
+                    │         FastAPI API        │
+                    │ REST + WebSocket endpoints │
                     └────────────────────────────┘
                           │   ▲
                           │   │ WS events / HTTP
@@ -34,10 +34,10 @@ IPA bridges the worlds of **Data Engineering**, **MLOps**, and **Agentic AI**, p
               └───────────────────────────────┘
                    │           │             │
              ┌─────┘      ┌────┘        ┌────┘
-             ▼             ▼             ▼
+             ▼            ▼             ▼
        Pipeline Metrics   RAG Search   Optimization Actions
-             │             │             │
-   ┌─────────┴──────┐ ┌────┴────────┐ ┌──┴────────┐
+             │              │             │
+   ┌─────────┴──────┐  ┌────┴────────┐  ┌──┴────────┐
    │ PostgreSQL/MLflow││Weaviate Vector││Airflow/Control APIs│
    └──────────────────┘└───────────────┘└──────────┘
           ▲                    ▲
@@ -47,7 +47,7 @@ IPA bridges the worlds of **Data Engineering**, **MLOps**, and **Agentic AI**, p
           │
    ┌─────────────────────────────────────────────────────────┐
    │ Docker-Compose Environment: PostgreSQL | Redis | MLflow │
-   │  | FastAPI | Streamlit | Weaviate | Prometheus | Grafana │
+   │  | FastAPI | Streamlit | Weaviate | Prometheus | Grafana│
    └─────────────────────────────────────────────────────────┘
 ```
 
@@ -57,12 +57,12 @@ IPA bridges the worlds of **Data Engineering**, **MLOps**, and **Agentic AI**, p
 
 | Layer | Technology | Purpose |
 |-------|-------------|----------|
-| **Orchestration** | **LangGraph + LangChain** | Multi-agent reasoning, stateful decisions |
+| **Orchestration** | **LangGraph + LangChain** | Multi agent reasoning, stateful decisions |
 | **LLM & RAG** | **OpenAI GPT-4 / Claude / Weaviate / Pinecone** | Root cause analysis + documentation retrieval |
-| **API** | **FastAPI** | REST + WebSocket for real-time events |
+| **API** | **FastAPI** | REST + WebSocket for real time events |
 | **Data Simulation** | **Python + Pandas** | Synthetic ETL pipelines for testing |
 | **Data Storage** | **PostgreSQL (SQLAlchemy ORM)** | Pipeline metadata, metrics, incidents |
-| **Caching/Queue** | **Redis** | Real-time messaging + caching |
+| **Caching/Queue** | **Redis** | Real time messaging + caching |
 | **Observability** | **Prometheus + Grafana + OpenTelemetry** | Metrics, tracing, dashboards |
 | **MLOps** | **MLflow** | Track model & agent performance |
 | **Frontend** | **Streamlit** | Dashboard & human approvals |
@@ -74,7 +74,7 @@ IPA bridges the worlds of **Data Engineering**, **MLOps**, and **Agentic AI**, p
 
 | Agent | Role | Example Function |
 |--------|------|------------------|
-| **Monitor Agent** | Continuously scans metrics (latency, throughput, errors) | Detects anomalies using rule-based or learned thresholds |
+| **Monitor Agent** | Continuously scans metrics (latency, throughput, errors) | Detects anomalies using rule based or learned thresholds |
 | **Analyzer Agent** | Performs Root Cause Analysis via RAG | Queries documentation and incident history to suggest cause |
 | **Optimizer Agent** | Suggests or executes optimizations | Adjust retry logic, scale resources, enable caching |
 | **Communicator Agent** | Reports and notifies human operators | Sends Slack/email alerts, updates dashboards |
@@ -85,14 +85,14 @@ Each agent operates as a **LangGraph node**, with dynamic edges based on anomaly
 
 ## 🧩 Features
 
-✅ **Autonomous monitoring** — Detect pipeline degradation in real-time  
+✅ **Autonomous monitoring** — Detect pipeline degradation in real time  
 ✅ **RAG-powered root cause analysis** — Retrieve relevant runbooks + prior incidents  
-✅ **Self-optimization** — Agents propose or auto-apply scaling/retry adjustments  
-✅ **Human-in-the-loop approvals** — Required for CRITICAL actions  
-✅ **Real-time observability** — WebSocket live updates to Streamlit dashboard  
+✅ **Self optimization** — Agents propose or auto apply scaling/retry adjustments  
+✅ **Human in the loop approvals** — Required for CRITICAL actions  
+✅ **Real time observability** — WebSocket live updates to Streamlit dashboard  
 ✅ **Full container orchestration** — 9 services integrated via Docker Compose  
 ✅ **Extensible MLOps** — Integrate MLflow for tracking agent outcomes  
-✅ **Production-grade CI/CD** — Automated linting, testing, and image scanning  
+✅ **Production grade CI/CD** — Automated linting, testing, and image scanning  
 
 ---
 
@@ -186,7 +186,7 @@ curl http://localhost:8000/api/v1/metrics
 ```
 intelligent-pipeline-agent/
 ├── src/
-│   ├── agents/                # Multi-agent orchestration (LangGraph)
+│   ├── agents/                # Multi agent orchestration (LangGraph)
 │   ├── rag/                   # RAG engine (embeddings, retriever)
 │   ├── api/                   # FastAPI app + routes
 │   ├── data_pipeline/         # Synthetic pipeline simulator
@@ -241,7 +241,7 @@ pytest -v --maxfail=1 --disable-warnings
 - **Linting:** Black + Flake8  
 - **Testing:** Pytest (unit/integration)  
 - **Security Scanning:** Trivy (Docker images)  
-- **Build Verification:** Docker Buildx (multi-arch test)  
+- **Build Verification:** Docker Buildx (multi arch test)  
 - **Coverage Reporting:** Codecov integration  
 
 File: `.github/workflows/ci.yml`
@@ -253,7 +253,7 @@ File: `.github/workflows/ci.yml`
 - `.env` secrets never committed  
 - All API keys passed via environment variables  
 - API protected via header key (`x-api-key`)  
-- Each container health-checked before dependent startup  
+- Each container health checked before dependent startup  
 - Optional **human approval flag** for critical optimizations  
 
 ---
